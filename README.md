@@ -23,4 +23,4 @@ gcd(6, 0) -> base case reached, returns 6
 The GCD of 48 and 18 is 6
 
 ## AI Disclosure
-Claude (Anthropic AI) was used to help design the recursive function structure and add the execution trace print statements. The AI-generated code was reviewed and understood before submission.
+Claude (Anthropic AI) was used to help design the recursive function structure and add the execution trace print statements.
