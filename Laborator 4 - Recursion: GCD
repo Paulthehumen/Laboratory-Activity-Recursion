@@ -1,0 +1,47 @@
+/* Description: Calculates the Greatest Common Divisor (GCD) of two non-negative integers using the recursive Euclidean algorithm.
+Programmed by: <Stephen Paul l. Tacardon> <BSIT/2> <48160> <Data structures and algorithm>
+Last Modified: <9/22/2026>
+Version: 1.0
+Acknowledgements: Claude (Anthropic AI) was used to help design the recursive structure and add trace print statements, based on the prompt: "help me write a recursive GCD program with a Java trace."
+*/
+
+
+package gdcrecursion;
+
+import java.util.Scanner;
+
+public class GdcRecursion {
+
+  
+    static int gcd(int a, int b) {
+      
+        if (b == 0) {
+            System.out.println("gcd(" + a + ", " + b + ")  -> base case reached, returns " + a);
+            return a;
+        }   
+        System.out.println("gcd(" + a + ", " + b + ")  a % b = " + (a % b)
+                + "  -> next call: gcd(" + b + ", " + (a % b) + ")");
+
+        int result = gcd(b, a % b);
+        System.out.println("gcd(" + a + ", " + b + ")  returns " + result);
+        return result;
+    }
+
+public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter first non-negative integer (a): ");
+        int a = input.nextInt();
+        System.out.print("Enter second non-negative integer (b): ");
+        int b = input.nextInt();
+
+        if (a < 0 || b < 0 || (a == 0 && b == 0)) {
+            System.out.println("Invalid input: numbers must be non-negative and not both zero.");
+            return;
+        }
+        System.out.println("Recursion trace");
+        int answer = gcd(a, b);
+
+        System.out.println("\nThe GCD of " + a + " and " + b + " is " + answer);
+    }
+}
